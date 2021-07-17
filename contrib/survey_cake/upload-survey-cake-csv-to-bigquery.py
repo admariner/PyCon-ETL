@@ -2,7 +2,6 @@
 A crawler which would crawl the openings
 """
 import argparse
-from pathlib import Path
 
 from udfs.survey_cake_csv_uploader import SurveyCakeCSVUploader
 
@@ -32,7 +31,6 @@ if __name__ == "__main__":
     PARSER.add_argument("-p", "--prod", action="store_true")
     ARGS = PARSER.parse_args()
     for filename, metadata in FILENAMES.items():
-        FILENAME_STEM = Path(filename).stem
         SURVEY_CAKE_CSV_UPLOADER = SurveyCakeCSVUploader(
             year=ARGS.year, filename=filename
         )
